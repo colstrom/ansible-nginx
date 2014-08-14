@@ -1,0 +1,47 @@
+---
+- name: "Directory Exists | {{ nginx_log_root }}"
+  file:
+    state: directory
+    path: "{{ nginx_log_root }}"
+    owner: "{{ nginx_user }}"
+    group: wcadmin
+    mode: 0775
+  tags:
+    - directory-structure
+    - logging
+    - nginx
+
+- name: "File is Writable | {{ nginx_error_log_path }}"
+  file:
+    state: touch
+    path: "{{ nginx_error_log_path }}"
+    owner: "{{ nginx_user }}"
+    group: wcadmin
+    mode: 0664
+  tags:
+    - permissions
+    - logging
+    - nginx
+
+- name: "File is Writable | {{ nginx_access_log_path }}"
+  file:
+    state: touch
+    path: "{{ nginx_access_log_path }}"
+    owner: "{{ nginx_user }}"
+    group: wcadmin
+    mode: 0664
+  tags:
+    - permissions
+    - logging
+    - nginx
+
+- name: Upload Config | beaver | nginx
+  template:
+    src: etc/beaver/conf.d/nginx
+    dest: /etc/beaver/conf.d/nginx
+  tags:
+    - configuration
+    - template-configuration
+    - logging
+    - using-beaver
+    - nginx

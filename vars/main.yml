@@ -1,0 +1,28 @@
+---
+nginx_user: www-data
+nginx_worker_processes: "{{ ansible_processor_vcpus }}"
+nginx_worker_connections: 4096
+
+nginx_runtime_data_root: /var/run/nginx
+
+nginx_pidfile_path: "{{ nginx_runtime_data_root }}/nginx.pid"
+nginx_socket_path: "{{ nginx_runtime_data_root }}/nginx.sock"
+
+nginx_log_root: /data/log/nginx
+
+nginx_access_log_enabled: yes
+nginx_access_log_path: "{{ nginx_log_root }}/access.log"
+
+nginx_error_log_enabled: yes
+nginx_error_log_critical_only: no
+nginx_error_log_path: "{{ nginx_log_root }}/error.log"
+
+nginx_hide_version: yes
+nginx_naxsi_enabled: no
+nginx_attack_mitigation_enabled: no
+
+nginx_gzip_enabled: yes
+nginx_performance_tuning_enabled: no
+nginx_file_descriptor_caching_enabled: no
+
+nginx_using_passenger: no

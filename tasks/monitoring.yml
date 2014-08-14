@@ -1,0 +1,14 @@
+---
+- name: Upload Config | monit | nginx
+  template:
+    src: etc/monit/conf.d/nginx
+    dest: /etc/monit/conf.d/nginx
+  notify: Reload Service | monit
+
+- name: Trigger All Callbacks
+  meta: flush_handlers
+
+- name: Confirm Monitoring | nginx
+  monit:
+    state: present
+    name: nginx

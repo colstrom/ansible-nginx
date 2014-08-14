@@ -1,0 +1,7 @@
+[{{ nginx_error_log_path }}]
+type: nginx
+tags: service, error
+
+[{{ nginx_access_log_path }}]
+type: nginx
+tags: service, access

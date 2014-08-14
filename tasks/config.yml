@@ -1,0 +1,60 @@
+---
+- name: Configure | nginx | ulimit
+  lineinfile:
+    state: present
+    dest: /etc/default/nginx
+    regexp: '#* *ULIMIT'
+    line: "ULIMIT={{ nginx_worker_connections }}"
+  notify: Reload Service | nginx
+  tags:
+    - configuration
+    - precise-configuration
+    - performance
+    - nginx
+
+- name: "Directory Exists | {{ nginx_runtime_data_root }}"
+  file:
+    state: directory
+    path: "{{ nginx_runtime_data_root }}"
+    owner: "{{ nginx_user }}"
+    group: wcadmin
+    mode: 0775
+  tags:
+    - directory-structure
+    - runtime-data
+    - nginx
+
+- name: Upload Config | nginx
+  template:
+    src: etc/nginx/nginx.conf
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: wcadmin
+    mode: 0664
+  notify: Reload Service | nginx
+  tags:
+    - configuration
+    - template-configuration
+    - nginx
+
+- name: Disable Config | nginx | default
+  file:
+    state: absent
+    path: /etc/nginx/sites-enabled/default
+  notify: Reload Service | nginx
+  tags:
+    - configuration
+    - disable-configuration
+    - disable-default
+    - nginx
+
+- name: Directory Exists | /data/www
+  file:
+    state: directory
+    path: /data/www
+    owner: www-data
+    group: wcadmin
+    mode: 0775
+  tags:
+    - directory-structure
+    - nginx
