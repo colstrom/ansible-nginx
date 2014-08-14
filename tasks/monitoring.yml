@@ -8,6 +8,18 @@
 - name: Trigger All Callbacks
   meta: flush_handlers
 
+- name: "Directory Exists | {{ nginx_runtime_data_root }}"
+  file:
+    state: directory
+    path: "{{ nginx_runtime_data_root }}"
+    owner: "{{ nginx_user }}"
+    group: wcadmin
+    mode: 0775
+  tags:
+    - directory-structure
+    - runtime-data
+    - nginx
+
 - name: Confirm Monitoring | nginx
   monit:
     state: present
