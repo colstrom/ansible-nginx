@@ -5,3 +5,8 @@
     pkg: "{{ item }}"
   with_items:
     - nginx-naxsi
+
+- name: Service Stopped | nginx
+  service:
+    state: stopped
+    name: nginx
