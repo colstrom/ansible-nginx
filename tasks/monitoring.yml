@@ -1,4 +1,15 @@
 ---
+- name: Configure Initscript | nginx
+  replace:
+    path: /etc/init.d/nginx
+    regexp: '/var/run/\$NAME.pid'
+    replace: "{{ nginx_pidfile_path }}"
+  tags:
+    - initscript
+    - runtime-data
+    - pidfile
+    - nginx
+
 - name: Upload Config | monit | nginx
   template:
     src: etc/monit/conf.d/nginx
