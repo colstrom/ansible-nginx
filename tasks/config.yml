@@ -4,7 +4,7 @@
     state: present
     dest: /etc/default/nginx
     regexp: '#* *ULIMIT'
-    line: "ULIMIT={{ nginx_worker_connections }}"
+    line: "ULIMIT='-n {{ nginx_worker_connections }}'"
   notify: Reload Service | nginx
   tags:
     - configuration
