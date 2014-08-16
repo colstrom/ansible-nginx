@@ -1,7 +1,7 @@
 ---
 - name: Configure Initscript | nginx
   replace:
-    path: /etc/init.d/nginx
+    dest: /etc/init.d/nginx
     regexp: '/var/run/\$NAME.pid'
     replace: "{{ nginx_pidfile_path }}"
   tags:
