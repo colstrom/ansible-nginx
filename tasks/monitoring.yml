@@ -19,10 +19,10 @@
 - name: Trigger All Callbacks
   meta: flush_handlers
 
-- name: "Directory Exists | {{ nginx_runtime_data_root }}"
+- name: "Directory Exists | {{ nginx_runtime_root }}"
   file:
     state: directory
-    path: "{{ nginx_runtime_data_root }}"
+    path: "{{ nginx_runtime_root }}"
     owner: "{{ nginx_user }}"
     group: wcadmin
     mode: 0775
