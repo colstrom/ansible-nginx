@@ -11,30 +11,6 @@
     - logging
     - nginx
 
-- name: "File is Writable | {{ nginx_error_log_path }}"
-  file:
-    state: touch
-    path: "{{ nginx_error_log_path }}"
-    owner: "{{ nginx_user }}"
-    group: wcadmin
-    mode: 0664
-  tags:
-    - permissions
-    - logging
-    - nginx
-
-- name: "File is Writable | {{ nginx_access_log_path }}"
-  file:
-    state: touch
-    path: "{{ nginx_access_log_path }}"
-    owner: "{{ nginx_user }}"
-    group: wcadmin
-    mode: 0664
-  tags:
-    - permissions
-    - logging
-    - nginx
-
 - name: Upload Config | beaver | nginx
   template:
     src: etc/beaver/conf.d/nginx
