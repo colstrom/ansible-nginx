@@ -28,3 +28,5 @@ nginx_file_descriptor_caching_enabled: no
 nginx_using_passenger: no
 
 nginx_docroot: /data/www/docroot
+
+nginx_using_standard_docroot: yes
