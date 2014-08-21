@@ -43,6 +43,7 @@
     owner: "{{ nginx_user }}"
     group: wcadmin
     mode: 0775
+  when: nginx_standard_docroot
   tags:
     - directory-structure
     - nginx
