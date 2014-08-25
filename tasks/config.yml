@@ -36,6 +36,43 @@
     - disable-default
     - nginx
 
+- name: Upload Config | nginx | Standard
+  template:
+    src: "etc/nginx/sites-available/{{ item }}.conf"
+    dest: "/etc/nginx/sites-available/{{ item }}.conf"
+    owner: root
+    group: wcadmin
+    mode: 0664
+  notify: Reload Service | nginx
+  with_items:
+    - no-ssl
+    - require-ssl
+    - static
+
+- name: Enable Config | nginx | 
+  file:
+    state: link
+    src: /etc/nginx/sites-available/static.conf
+    dest: /etc/nginx/sites-enabled/static
+  notify: Reload Service | nginx
+  when: nginx_static_server
+
+- name: Enable Config | nginx | 
+  file:
+    state: link
+    src: /etc/nginx/sites-available/require-ssl.conf
+    dest: /etc/nginx/sites-enabled/require-ssl
+  notify: Reload Service | nginx
+  when: nginx_ssl_enforced
+
+- name: Enable Config | nginx | 
+  file:
+    state: link
+    src: /etc/nginx/sites-available/no-ssl.conf
+    dest: /etc/nginx/sites-enabled/no-ssl
+  notify: Reload Service | nginx
+  when: nginx_ssl_disabled
+
 - name: "Directory Exists | {{ nginx_docroot }}"
   file:
     state: directory
