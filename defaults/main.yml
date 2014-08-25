@@ -32,3 +32,5 @@ nginx_docroot: /data/www/docroot
 nginx_using_standard_docroot: yes
 
 nginx_static_server: no
+nginx_ssl_required: no
+nginx_ssl_enforced: no
