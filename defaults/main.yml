@@ -30,3 +30,5 @@ nginx_using_passenger: no
 nginx_docroot: /data/www/docroot
 
 nginx_using_standard_docroot: yes
+
+nginx_static_server: no
