@@ -48,8 +48,9 @@
     - no-ssl
     - require-ssl
     - static
+    - php
 
-- name: Enable Config | nginx | 
+- name: Enable Config | nginx | static
   file:
     state: link
     src: /etc/nginx/sites-available/static.conf
@@ -57,7 +58,15 @@
   notify: Reload Service | nginx
   when: nginx_static_server
 
-- name: Enable Config | nginx | 
+- name: Enable Config | nginx | php-application
+  file:
+    state: link
+    src: /etc/nginx/sites-available/php-application.conf
+    dest: /etc/nginx/sites-enabled/php-application
+  notify: Reload Service | nginx
+  when: nginx_php_application_server
+
+- name: Enable Config | nginx | SSL Enforced
   file:
     state: link
     src: /etc/nginx/sites-available/require-ssl.conf
@@ -65,7 +74,7 @@
   notify: Reload Service | nginx
   when: nginx_ssl_enforced
 
-- name: Enable Config | nginx | 
+- name: Enable Config | nginx | SSL Disabled
   file:
     state: link
     src: /etc/nginx/sites-available/no-ssl.conf
