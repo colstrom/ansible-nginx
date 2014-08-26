@@ -48,7 +48,7 @@
     - no-ssl
     - require-ssl
     - static
-    - php
+    - php-application
 
 - name: Enable Config | nginx | static
   file:
