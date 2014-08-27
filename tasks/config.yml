@@ -47,24 +47,15 @@
   with_items:
     - no-ssl
     - require-ssl
-    - static
-    - php-application
+    - site
 
 - name: Enable Config | nginx | static
   file:
     state: link
-    src: /etc/nginx/sites-available/static.conf
-    dest: /etc/nginx/sites-enabled/static
+    src: /etc/nginx/sites-available/site.conf
+    dest: /etc/nginx/sites-enabled/site
   notify: Reload Service | nginx
-  when: nginx_static_server
-
-- name: Enable Config | nginx | php-application
-  file:
-    state: link
-    src: /etc/nginx/sites-available/php-application.conf
-    dest: /etc/nginx/sites-enabled/php-application
-  notify: Reload Service | nginx
-  when: nginx_php_application_server
+  when: nginx_using_standard_config
 
 - name: Enable Config | nginx | SSL Enforced
   file:
