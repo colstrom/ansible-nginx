@@ -12,6 +12,7 @@ nginx_log_root: "{{ log_root }}/nginx"
 
 nginx_access_log_enabled: yes
 nginx_access_log_path: "{{ nginx_log_root }}/access.log"
+nginx_access_log_ignore_static_assets: no
 
 nginx_error_log_enabled: yes
 nginx_error_log_path: "{{ nginx_log_root }}/error.log"
@@ -36,3 +37,7 @@ php_fpm_socket_path: "{{ runtime_root }}/php/fpm.sock"
 nginx_ssl_disabled: no
 nginx_ssl_enforced: no
 
+nginx_cors_enabled: yes
+nginx_cors_whitelist_enabled: no
+nginx_cors_whitelist_protocol: 'https?'
+nginx_cors_whitelist_hosts: '[^/]*\.telus(webteam)?\.com'
