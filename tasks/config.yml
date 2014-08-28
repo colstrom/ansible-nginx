@@ -55,7 +55,7 @@
     src: /etc/nginx/sites-available/site.conf
     dest: /etc/nginx/sites-enabled/site
   notify: Reload Service | nginx
-  when: nginx_using_standard_config
+  when: nginx_standard_configuration
 
 - name: Enable Config | nginx | SSL Enforced
   file:

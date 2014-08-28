@@ -28,7 +28,7 @@ nginx_file_descriptor_caching_enabled: no
 nginx_using_standard_docroot: yes
 nginx_docroot: /data/www/docroot
 
-nginx_using_standard_configuration: yes
+nginx_standard_configuration: yes
 nginx_passenger_enabled: no
 nginx_php_enabled: no
 php_fpm_socket_path: "{{ runtime_root }}/php/fpm.sock"
