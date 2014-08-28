@@ -10,3 +10,5 @@
   service:
     state: stopped
     name: nginx
+  tags:
+    - disruptive
