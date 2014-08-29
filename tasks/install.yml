@@ -8,7 +8,7 @@
 
 - name: Service Stopped | nginx
   service:
-    state: stopped
     name: nginx
+    state: stopped
   tags:
     - disruptive
