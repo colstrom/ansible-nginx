@@ -15,3 +15,4 @@
 
 - name: Kill Process | nginx 
   command: killall nginx
+  ignore_errors: True
