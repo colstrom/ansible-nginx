@@ -12,3 +12,6 @@
     state: stopped
   tags:
     - disruptive
+
+- name: Kill Process | nginx 
+  command: killall nginx
