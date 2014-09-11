@@ -45,6 +45,18 @@
     mode: 0664
   notify: Reload Service | nginx
 
+- name: Enable Config | nginx | Standard
+  file:
+    state: link
+    src: /etc/nginx/sites-available/site.conf
+    dest: /etc/nginx/sites-enabled/site
+  notify: Reload Service | nginx
+  when: nginx_standard_configuration
+  tags:
+    - configuration
+    - enable-configuration
+    - nginx
+
 - name: "Directory Exists | {{ nginx_docroot }}"
   file:
     state: directory
