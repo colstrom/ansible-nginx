@@ -41,3 +41,5 @@ nginx_cors_enabled: yes
 nginx_cors_whitelist_enabled: no
 nginx_cors_whitelist_protocol: 'https?'
 nginx_cors_whitelist_hosts: '[^/]*\.telus(webteam)?\.com'
+
+nginx_redirect_missing_files_to_root: no
