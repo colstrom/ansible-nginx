@@ -43,3 +43,5 @@ nginx_cors_whitelist_protocol: 'https?'
 nginx_cors_whitelist_hosts: '[^/]*\.telus(webteam)?\.com'
 
 nginx_redirect_missing_files_to_root: no
+
+nginx_file_extension_blacklist: '\.sql(\.zip)?$'
