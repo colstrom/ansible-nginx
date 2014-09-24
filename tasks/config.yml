@@ -45,6 +45,16 @@
     mode: 0664
   notify: Reload Service | nginx
 
+- name: Upload Config | nginx | auth
+  template:
+    src: data/www/auth
+    dest: /data/www/auth
+    owner: root
+    group: wcadmin
+    mode: 0664
+  when: nginx_auth_enabled
+  notify: Reload Service | nginx
+
 - name: Enable Config | nginx | Standard
   file:
     state: link

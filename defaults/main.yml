@@ -43,4 +43,8 @@ nginx_cors_whitelist_hosts: '[^/]*\.telus(webteam)?\.com'
 
 nginx_redirect_missing_files_to_root: no
 
+nginx_client_max_body_size: 1m
+
 nginx_file_extension_blacklist: '\.sql(\.zip)?$'
+nginx_auth_enabled: no
+nginx_auth_data: ''
