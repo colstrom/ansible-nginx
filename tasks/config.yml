@@ -1,4 +1,15 @@
 ---
+- name: "Directory Exists | {{ nginx_docroot }}"
+  file:
+    state: directory
+    path: "{{ nginx_docroot }}"
+    owner: "{{ nginx_user }}"
+    group: wcadmin
+    mode: 0775
+  tags:
+    - directory-structure
+    - nginx
+
 - name: Configure | nginx | ulimit
   lineinfile:
     state: present
@@ -65,15 +76,4 @@
   tags:
     - configuration
     - enable-configuration
-    - nginx
-
-- name: "Directory Exists | {{ nginx_docroot }}"
-  file:
-    state: directory
-    path: "{{ nginx_docroot }}"
-    owner: "{{ nginx_user }}"
-    group: wcadmin
-    mode: 0775
-  tags:
-    - directory-structure
     - nginx
