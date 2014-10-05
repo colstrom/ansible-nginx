@@ -13,6 +13,7 @@ nginx_log_root: "{{ log_root }}/nginx"
 nginx_access_log_enabled: yes
 nginx_access_log_path: "{{ nginx_log_root }}/access.log"
 nginx_access_log_ignore_static_assets: no
+nginx_access_log_format: extended
 
 nginx_error_log_enabled: yes
 nginx_error_log_path: "{{ nginx_log_root }}/error.log"
