@@ -36,6 +36,10 @@ php_fpm_socket_path: "{{ runtime_root }}/php/fpm.sock"
 
 nginx_ssl_disabled: no
 nginx_ssl_enforced: no
+nginx_ssl_enabled: no
+nginx_ssl_certificate_path: /data/www/ssl.crt
+nginx_ssl_key_path: /data/www/ssl.key
+nginx_ssl_should_degrade_security_to_accomodate_old_browsers: no
 
 nginx_cors_enabled: yes
 nginx_cors_whitelist_enabled: no
