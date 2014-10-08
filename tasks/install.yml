@@ -6,12 +6,12 @@
   with_items:
     - nginx-naxsi
 
-- name: Install Packages | pip
-  pip:
-    state: latest
-    name: "{{ item }}"
-  with_items:
-    - ngxtop
+#- name: Install Packages | pip
+#  pip:
+#    state: latest
+#    name: "{{ item }}"
+#  with_items:
+#    - ngxtop
 
 - name: Service Stopped | nginx
   service:
@@ -20,6 +20,6 @@
   tags:
     - disruptive
 
-- name: Kill Process | nginx 
+- name: Kill Process | nginx
   command: killall nginx
   ignore_errors: True
