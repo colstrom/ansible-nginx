@@ -30,8 +30,3 @@
 
 - name: Trigger All Callbacks
   meta: flush_handlers
-
-- name: Confirm Monitoring | nginx
-  monit:
-    state: present
-    name: nginx
