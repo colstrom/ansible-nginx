@@ -55,3 +55,10 @@ nginx_auth_enabled: no
 nginx_auth_data: ''
 
 nginx_fastcgi_buffers: 8k
+
+nginx_context_proxy_enabled: no
+nginx_context_proxy_host: 'http://www.telus.com'
+nginx_context_proxy_domain_equivalence: 'telus.com teluswebteam.com'
+nginx_context_proxy_paths:
+  - /actions/preferences/change-locale.do
+  - /actions/services/browser-profile.do
