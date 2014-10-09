@@ -62,3 +62,7 @@ nginx_context_proxy_domain_equivalence: 'telus.com teluswebteam.com'
 nginx_context_proxy_paths:
   - /actions/preferences/change-locale.do
   - /actions/services/browser-profile.do
+
+nginx_php_path_blacklist_enabled: no
+nginx_php_path_blacklist:
+  - /static
