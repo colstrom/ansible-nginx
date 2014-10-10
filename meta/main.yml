@@ -5,3 +5,4 @@ dependencies:
     repository_url: 'deb http://ppa.launchpad.net/chris-lea/nginx-devel/ubuntu trusty main'
   - role: meta/monitor
     monitor_name: nginx
+    monitor_pidfile: "{{ nginx_pidfile_path }}"
