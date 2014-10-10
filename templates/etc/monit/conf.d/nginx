@@ -1,4 +1,0 @@
-check process nginx with pidfile {{ nginx_pidfile_path }}
-  start program "/usr/sbin/service nginx start"
-  stop program "/usr/sbin/service nginx stop"
-  if 5 restarts within 5 cycles then timeout
