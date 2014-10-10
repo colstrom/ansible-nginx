@@ -74,3 +74,4 @@ nginx_developer_environment_docroot: '/home/$user/www/$environment/docroot';
 nginx_php_fastcgi_param_extras_enabled: no
 nginx_php_fastcgi_param_extras:
   - ''
+nginx_php_index_only: no
