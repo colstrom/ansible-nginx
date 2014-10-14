@@ -11,11 +11,14 @@
     - runtime-data
     - nginx
 
-- name: Configure Initscript | nginx
+- name: nginx | update pidfile rerferences
   replace:
-    dest: /etc/init.d/nginx
+    dest: "{{ item }}"
     regexp: '/var/run/\$NAME.pid'
     replace: "{{ nginx_pidfile_path }}"
+  with_items:
+    - /etc/init.d/nginx
+    - /etc/logrotate.d/nginx
   tags:
     - initscript
     - runtime-data

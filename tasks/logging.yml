@@ -21,3 +21,16 @@
     - logging
     - using-beaver
     - nginx
+
+- name: Update logrotate | nginx
+  replace:
+    dest: "{{ item }}"
+    regexp: '/var/log/nginx'
+    replace: "{{ nginx_log_root }}"
+  with_items:
+    - /etc/logrotate.d/nginx
+  tags:
+    - initscript
+    - runtime-data
+    - pidfile
+    - nginx
