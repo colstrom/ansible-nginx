@@ -7,5 +7,6 @@
     state: restarted
     name: nginx
   tags:
-    - monit
+    - nginx
+    - using-monit
     - disruptive
