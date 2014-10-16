@@ -63,9 +63,12 @@ nginx_context_proxy_paths:
   - /actions/preferences/change-locale.do
   - /actions/services/browser-profile.do
 
+nginx_php_virtual_context_enabled: no
+nginx_php_virtual_context_path: /my-account
+
 nginx_php_path_blacklist_enabled: no
-nginx_php_path_blacklist:
-  - /static
+nginx_php_path_blacklist_regexp: /static
+nginx_php_path_blacklist_try_files: '$uri $uri/'
 
 nginx_developer_environments_enabled: no
 nginx_developer_environment_regexp: '(?<environment>[\w-]+)\.(?<user>[\w-]+)\..*'
