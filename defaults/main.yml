@@ -52,7 +52,7 @@ nginx_client_max_body_size: 1m
 
 nginx_file_extension_blacklist: '\.sql(\.zip)?$'
 nginx_auth_enabled: no
-nginx_auth_data: ''
+nginx_auth_data: 'digital:$apr1$KUmOZDYb$DwSu.LUIYTKaXJIZ9h8k61'
 
 nginx_fastcgi_buffers: 8k
 
