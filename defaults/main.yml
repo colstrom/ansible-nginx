@@ -81,3 +81,7 @@ nginx_php_fastcgi_param_extras:
 nginx_php_index_only: no
 
 nginx_static_asset_handling_enabled: yes
+
+nginx_internal_paths_enabled: no
+nginx_internal_paths:
+  - /private
