@@ -12,14 +12,3 @@
     name: "{{ item }}"
   with_items:
     - ngxtop
-
-- name: Service Stopped | nginx
-  service:
-    name: nginx
-    state: stopped
-  tags:
-    - disruptive
-
-- name: Kill Process | nginx
-  command: killall nginx
-  ignore_errors: True
