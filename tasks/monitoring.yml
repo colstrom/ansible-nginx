@@ -11,7 +11,7 @@
     - runtime-data
     - nginx
 
-- name: nginx | update pidfile rerferences
+- name: nginx | update pidfile preferences
   replace:
     dest: "{{ item }}"
     regexp: '/var/run/\$NAME.pid'
