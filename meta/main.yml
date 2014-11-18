@@ -6,3 +6,11 @@ dependencies:
   - role: meta/monitor
     monitor_name: nginx
     monitor_pidfile: "{{ nginx_pidfile_path }}"
+
+  - role: meta/logging
+    logging_name: nginx 
+    logging_files:
+      - tags: 'service, error'
+        path: "{{ nginx_error_log_path }}"
+      - tags: 'service, access'
+        path: "{{ nginx_access_log_path }}"

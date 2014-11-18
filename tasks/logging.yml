@@ -11,17 +11,6 @@
     - logging
     - nginx
 
-- name: Upload Config | beaver | nginx
-  template:
-    src: etc/beaver/conf.d/nginx
-    dest: /etc/beaver/conf.d/nginx
-  tags:
-    - configuration
-    - template-configuration
-    - logging
-    - using-beaver
-    - nginx
-
 - name: Update logrotate | nginx
   replace:
     dest: "{{ item }}"
