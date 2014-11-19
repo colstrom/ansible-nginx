@@ -1,16 +1,4 @@
 ---
-- name: "Directory Exists | {{ nginx_log_root }}"
-  file:
-    state: directory
-    path: "{{ nginx_log_root }}"
-    owner: "{{ nginx_user }}"
-    group: wcadmin
-    mode: 0775
-  tags:
-    - directory-structure
-    - logging
-    - nginx
-
 - name: Update logrotate | nginx
   replace:
     dest: "{{ item }}"

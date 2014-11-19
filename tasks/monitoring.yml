@@ -1,16 +1,4 @@
 ---
-- name: "Directory Exists | {{ nginx_runtime_root }}"
-  file:
-    state: directory
-    path: "{{ nginx_runtime_root }}"
-    owner: "{{ nginx_user }}"
-    group: wcadmin
-    mode: 0775
-  tags:
-    - directory-structure
-    - runtime-data
-    - nginx
-
 - name: nginx | update pidfile preferences
   replace:
     dest: "{{ item }}"
