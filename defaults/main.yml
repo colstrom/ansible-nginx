@@ -85,3 +85,6 @@ nginx_static_asset_handling_enabled: yes
 nginx_internal_paths_enabled: no
 nginx_internal_paths:
   - /private
+
+nginx_whitelist_ips: no
+nginx_whitelist_paths: no
