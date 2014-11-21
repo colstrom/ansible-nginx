@@ -3,6 +3,7 @@ dependencies:
   - role: meta/repository
     repository_key: '0xb9316a7bc7917b12'
     repository_url: 'deb http://ppa.launchpad.net/chris-lea/nginx-devel/ubuntu trusty main'
+
   - role: meta/monitor
     monitor_name: nginx
     monitor_user: "{{ nginx_user }}"
@@ -12,7 +13,11 @@ dependencies:
     logging_name: nginx
     logging_user: "{{ nginx_user }}"
     logging_files:
-      - tags: 'service, error'
+      - tags:
+          - service
+          - error
         path: "{{ nginx_error_log_path }}"
-      - tags: 'service, access'
+      - tags:
+          - service
+          - access
         path: "{{ nginx_access_log_path }}"
