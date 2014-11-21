@@ -6,12 +6,10 @@ dependencies:
 
   - role: meta/monitor
     monitor_name: nginx
-    monitor_user: "{{ nginx_user }}"
     monitor_pidfile: "{{ nginx_pidfile_path }}"
 
   - role: meta/logging
-    logging_name: nginx
-    logging_user: "{{ nginx_user }}"
+    logging_name: nginx 
     logging_files:
       - tags:
           - service
