@@ -89,3 +89,5 @@ nginx_internal_paths:
 
 nginx_whitelist_ips: no
 nginx_whitelist_paths: no
+
+nginx_index: "index.html {% if nginx_php_enabled %}index.php{% endif %}"
