@@ -55,6 +55,8 @@
     group: wcadmin
     mode: 0664
   notify: Reload Service | nginx
+  tags:
+    - nginx
 
 - name: Upload Config | nginx | auth
   template:
@@ -65,6 +67,8 @@
     mode: 0664
   when: nginx_auth_enabled
   notify: Reload Service | nginx
+  tags:
+    - nginxs
 
 - name: Enable Config | nginx | Standard
   file:

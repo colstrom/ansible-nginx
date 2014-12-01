@@ -5,6 +5,8 @@
     pkg: "{{ item }}"
   with_items:
     - nginx-naxsi
+  tags:
+    - nginx
 
 - name: Install Packages | pip
   pip:
@@ -12,3 +14,5 @@
     name: "{{ item }}"
   with_items:
     - ngxtop
+  tags:
+    - nginx
