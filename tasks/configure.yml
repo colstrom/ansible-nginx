@@ -68,7 +68,7 @@
   when: nginx_auth_enabled
   notify: Reload Service | nginx
   tags:
-    - nginxs
+    - nginx
 
 - name: Enable Config | nginx | Standard
   file:
