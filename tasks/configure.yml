@@ -65,10 +65,10 @@
     owner: root
     group: wcadmin
     mode: 0664
-  when: nginx_auth_enabled
+  when: nginx_auth_enabled | bool()
   notify: Reload Service | nginx
   tags:
-    - nginxs
+    - nginx
 
 - name: Enable Config | nginx | Standard
   file:
