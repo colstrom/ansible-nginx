@@ -19,3 +19,6 @@ dependencies:
           - service
           - access
         path: "{{ nginx_access_log_path }}"
+
+  - role: package/logrotate
+    logrotate_name: nginx
