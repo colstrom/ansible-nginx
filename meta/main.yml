@@ -8,7 +8,7 @@ dependencies:
     monitor_name: nginx
     monitor_pidfile: "{{ nginx_pidfile_path }}"
 
-  - role: meta/logging
+  - role: meta/log-aggregator
     logging_name: nginx 
     logging_files:
       - tags:
