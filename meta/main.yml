@@ -22,3 +22,4 @@ dependencies:
 
   - role: package/logrotate
     logrotate_name: nginx
+    logrotate_create_logs_with_owner: "{{ nginx_user }}"
