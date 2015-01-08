@@ -11,14 +11,10 @@ dependencies:
   - role: meta/log-aggregator
     logging_name: nginx 
     logging_files:
-      - tags:
-          - service
-          - error
-        path: "{{ nginx_error_log_path }}"
-      - tags:
-          - service
-          - access
-        path: "{{ nginx_access_log_path }}"
+      - path: "{{ nginx_error_log_path }}"
+        tag: nginx.error
+      - path: "{{ nginx_access_log_path }}"
+        tag: nginx.access
 
   - role: package/logrotate
     logrotate_name: nginx
