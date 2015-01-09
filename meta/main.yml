@@ -8,13 +8,14 @@ dependencies:
     monitor_name: nginx
     monitor_pidfile: "{{ nginx_pidfile_path }}"
 
-  - role: meta/log-aggregator
-    logging_name: nginx 
-    logging_files:
-      - path: "{{ nginx_error_log_path }}"
-        tag: nginx.error
+  - role: packages/fluentd
+    fluentd_sources:
       - path: "{{ nginx_access_log_path }}"
+        format: '/^(?<time>[^ ]+ [^ ]+) \[(?<log_level>.*)\] (?<pid>\d*).(?<tid>[^:]*): (?<message>.*)$/'
         tag: nginx.access
+      - path: "{{ nginx_error_log_path }}"
+        format: '/^(?<time>[^ ]+ [^ ]+) \[(?<log_level>.*)\] (?<pid>\d*).(?<tid>[^:]*): (?<message>.*)$/'
+        tag: nginx.error
 
   - role: package/logrotate
     logrotate_name: nginx
