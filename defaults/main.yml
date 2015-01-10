@@ -63,7 +63,7 @@ nginx_context_proxy_paths:
   - /actions/preferences/change-locale.do
   - /actions/services/browser-profile.do
 
-nginx_php_virtual_context_path: no
+nginx_php_virtual_context_path: ''
 
 nginx_php_path_blacklist_enabled: no
 nginx_php_path_blacklist_regexp: /static
@@ -75,7 +75,7 @@ nginx_developer_environments_enabled: no
 nginx_developer_environment_regexp: '(?<environment>[\w-]+)\.(?<user>[\w-]+)\..*'
 nginx_developer_environment_docroot: '/home/$user/www/$environment/docroot'
 
-nginx_php_fastcgi_param_extras: no
+nginx_php_fastcgi_param_extras: []
 nginx_php_index_only: no
 
 nginx_static_asset_handling_enabled: yes
