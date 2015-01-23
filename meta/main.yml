@@ -11,10 +11,10 @@ dependencies:
   - role: package/fluentd
     fluentd_sources:
       - path: "{{ nginx_access_log_path }}"
-        format: '/^(?<time>[^ ]+ [^ ]+) \[(?<log_level>.*)\] (?<pid>\d*).(?<tid>[^:]*): (?<message>.*)$/'
+        format: ''
         tag: nginx.access
       - path: "{{ nginx_error_log_path }}"
-        format: '/^(?<time>[^ ]+ [^ ]+) \[(?<log_level>.*)\] (?<pid>\d*).(?<tid>[^:]*): (?<message>.*)$/'
+        format: ''
         tag: nginx.error
 
   - role: package/logrotate
