@@ -6,7 +6,6 @@ dependencies:
 
   - role: meta/monitor
     monitor_name: nginx
-    monitor_pidfile: "{{ nginx_pidfile_path }}"
 
   - role: package/fluentd
     fluentd_sources:
