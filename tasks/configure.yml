@@ -91,7 +91,7 @@
     owner: root
     group: wcadmin
     mode: 0664
-  when: nginx_auth_enabled | bool()
+  when: "{% if nginx_auth_data != '' %}true{% else %}false{% endif %}"
   notify: Reload Service | nginx
   tags:
     - nginx
