@@ -1,4 +1,30 @@
 ---
+- name: "Directory Exists | {{ nginx_runtime_root }}"
+  file:
+    state: directory
+    path: "{{ nginx_runtime_root }}"
+    owner: "{{ nginx_user }}"
+    group: wcadmin
+    mode: 0775
+  tags:
+    - directory-structure
+    - runtime-data
+    - nginx
+
+- name: nginx | update pidfile preferences
+  replace:
+    dest: "{{ item }}"
+    regexp: '/var/run/\$NAME.pid'
+    replace: "{{ nginx_pidfile_path }}"
+  with_items:
+    - /etc/init.d/nginx
+    - /etc/logrotate.d/nginx
+  tags:
+    - initscript
+    - runtime-data
+    - pidfile
+    - nginx
+
 - name: "Directory Exists | {{ nginx_docroot }}"
   file:
     state: directory
@@ -55,6 +81,8 @@
     group: wcadmin
     mode: 0664
   notify: Reload Service | nginx
+  tags:
+    - nginx
 
 - name: Upload Config | nginx | auth
   template:
@@ -63,8 +91,10 @@
     owner: root
     group: wcadmin
     mode: 0664
-  when: nginx_auth_enabled
+  when: nginx_auth_enabled | bool()
   notify: Reload Service | nginx
+  tags:
+    - nginx
 
 - name: Enable Config | nginx | Standard
   file:

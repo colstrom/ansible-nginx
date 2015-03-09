@@ -6,16 +6,16 @@ dependencies:
 
   - role: meta/monitor
     monitor_name: nginx
-    monitor_pidfile: "{{ nginx_pidfile_path }}"
 
-  - role: meta/logging
-    logging_name: nginx 
-    logging_files:
-      - tags:
-          - service
-          - error
-        path: "{{ nginx_error_log_path }}"
-      - tags:
-          - service
-          - access
-        path: "{{ nginx_access_log_path }}"
+  - role: package/fluentd
+    fluentd_sources:
+      - path: "{{ nginx_access_log_path }}"
+        format: '^(?<remote_addr>[\d\.]{7,15}) - (?<remote_user>[^ ]*) \[(?<time_iso8601>(?<date>[^T]*)T(?<time>[^+]*)\+(?<time_offset>[^\]]*)[^\]]*)\] "(?<request>(?<method>[^ ]*) (?<url>[^ ]*) (?<protocol>[^"]*))" (?<status>\d+) (?<bytes_sent>\d+) "(?<http_referer>[^"]*)" "(?<http_user_agent>[^"]*)" \| (?<request_time>\d.\d+) (?<pipe>[^ ]*) (?<connection_requests>[^ ]*) (?<gzip_ratio>[^ ]*) (?<ssl_protocol>[^\/]*)\/(?<ssl_cipher>.*)'
+        tag: nginx.access
+      - path: "{{ nginx_error_log_path }}"
+        format: '^(?<time>[^ ]+ [^ ]+) \[(?<log_level>[^]]*)\] (?<pid>\d*).(?<tid>[^:]*): (?<message>.*)'
+        tag: nginx.error
+
+  - role: package/logrotate
+    logrotate_name: nginx
+    logrotate_create_logs_with_owner: "{{ nginx_user }}"

@@ -1,5 +1,4 @@
 ---
 - include: install.yml
-- include: monitoring.yml
 - include: configure.yml
 - include: logging.yml
