@@ -65,6 +65,9 @@ nginx_context_proxy_paths:
 
 nginx_domain_redirect: no
 
+nginx_redirects: no
+#  - { source: /blog, destination: '$scheme://$host/', type: permanent }
+
 nginx_redirects_for_browser_profile_and_locale_enabled: no
 nginx_php_virtual_context_path: ''
 
