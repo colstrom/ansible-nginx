@@ -36,6 +36,16 @@
     - directory-structure
     - nginx
 
+- name: Generate password
+  shell: "{{ item }}"
+  with_items:
+    - "echo -n \"{{ nginx_auth_username }}:\" > {{ nginx_auth_location }}"
+    - "openssl passwd -1 -salt {{ nginx_auth_salt }} {{ generated_password_password | mandatory }} >> {{ nginx_auth_location }}"
+  when: "generated_password_password is defined"
+  tags:
+    - improves-security
+    - nginx
+
 - name: Configure | nginx | ulimit
   lineinfile:
     state: present
