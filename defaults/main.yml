@@ -102,3 +102,5 @@ nginx_whitelist_paths: no
 nginx_index: "index.html{% if nginx_php_enabled %} index.php{% endif %}"
 nginx_localhost_authorization_required: no
 nginx_flag_social_crawlers: no
+
+nginx_prerender_enabled: no
