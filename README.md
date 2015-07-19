@@ -27,6 +27,7 @@ Tunables
 * `nginx_performance_tuning_enabled` (boolean) - Aggressively favour performance over compatibility?
 * `nginx_file_descriptor_caching_enabled` (boolean) - Enable file descriptor caching?
 * `nginx_docroot` (string) - Directory for docroot
+* `nginx_creates_docroot` (boolean) - Enable to get nginx to create the docroot path
 * `nginx_standard_configuration` (boolean) - Using included configuration?
 * `nginx_passenger_enabled` (boolean) - Enable passenger for Ruby apps?
 * `nginx_php_enabled` (boolean) - Pass requests for PHP files to php-fpm?
