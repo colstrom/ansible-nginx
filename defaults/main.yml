@@ -64,6 +64,7 @@ nginx_fastcgi_buffers: 8k
 
 nginx_context_proxy_enabled: no
 nginx_context_proxy_host: 'http://www.telus.com'
+nginx_context_proxy_domain_equivalence_enabled: yes
 nginx_context_proxy_domain_equivalence: "telus.com {{ domain }}"
 nginx_context_proxy_paths:
   - /actions/preferences/change-locale.do
