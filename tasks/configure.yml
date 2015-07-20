@@ -74,19 +74,6 @@
     - template-configuration
     - nginx
 
-- name: Upload Auth | nginx
-  template:
-    src: data/www/auth
-    dest: /data/www/auth
-    owner: root
-    group: wcadmin
-    mode: 0664
-  notify: Reload Service | nginx
-  when: nginx_auth_enabled
-  tags:
-    - configuration
-    - nginx
-
 - name: Disable Config | nginx | default
   file:
     state: absent
