@@ -28,6 +28,7 @@ nginx_performance_tuning_enabled: no
 nginx_file_descriptor_caching_enabled: no
 
 nginx_docroot: /data/www/docroot
+nginx_creates_docroot: yes
 
 nginx_standard_configuration: yes
 nginx_passenger_enabled: no
