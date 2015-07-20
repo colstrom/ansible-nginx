@@ -82,6 +82,7 @@
     group: wcadmin
     mode: 0664
   notify: Reload Service | nginx
+  when: nginx_auth_enabled
   tags:
     - configuration
     - nginx
