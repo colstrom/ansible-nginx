@@ -52,7 +52,6 @@ Tunables
 * `nginx_fastcgi_buffers` (string) - Buffer size for FastCGI requests
 * `nginx_context_proxy_enabled` (boolean) - Proxy requests for specific context paths?
 * `nginx_context_proxy_host` (string) - Upstream location for proxied requests
-* `nginx_context_proxy_domain_equivalence_enabled` (boolean) - Context proxy domain?
 * `nginx_context_proxy_domain_equivalence` (string) - Rewrite cookies for one domain to another, with proxied requests.
 * `nginx_context_proxy_paths` (list) - Paths that should be proxied
 * `nginx_domain_redirect` (boolean) - This... probably does something. What is a mystery.
