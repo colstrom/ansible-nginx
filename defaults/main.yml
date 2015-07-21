@@ -2,7 +2,6 @@
 nginx_user: www-data
 nginx_worker_processes: "{{ ansible_processor_vcpus }}"
 nginx_worker_connections: 4096
-
 nginx_runtime_root: "{{ runtime_root | default('/var/run') }}/nginx"
 
 nginx_pidfile_path: "{{ nginx_runtime_root }}/nginx.pid"
@@ -28,6 +27,7 @@ nginx_performance_tuning_enabled: no
 nginx_file_descriptor_caching_enabled: no
 
 nginx_docroot: /data/www/docroot
+nginx_creates_docroot: yes
 
 nginx_standard_configuration: yes
 nginx_passenger_enabled: no
@@ -56,6 +56,7 @@ nginx_auth_enabled: no
 #generated_password_location: /data/www/auth
 #generated_password_username: digital
 #generated_password_salt: apr1
+nginx_auth_root: /data/www
 nginx_auth_location: /data/www/auth
 nginx_auth_username: digital
 nginx_auth_salt: apr1
