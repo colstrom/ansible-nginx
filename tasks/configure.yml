@@ -32,7 +32,7 @@
     owner: "{{ nginx_user }}"
     group: wcadmin
     mode: 0775
-  when: nginx_creates_docroot
+  when: nginx_creates_docroot | bool
   tags:
     - directory-structure
     - nginx
@@ -44,7 +44,7 @@
     owner: "{{ nginx_user }}"
     group: wcadmin
     mode: 0775
-  when: nginx_auth_enabled
+  when: nginx_auth_enabled | bool
   tags:
     - directory-structure
     - nginx
@@ -114,7 +114,7 @@
     src: /etc/nginx/sites-available/site.conf
     dest: /etc/nginx/sites-enabled/site
   notify: Reload Service | nginx
-  when: nginx_standard_configuration
+  when: nginx_standard_configuration | bool
   tags:
     - configuration
     - enable-configuration
