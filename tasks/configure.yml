@@ -37,6 +37,18 @@
     - directory-structure
     - nginx
 
+- name: "Directory Exists | {{ nginx_auth_root }}"
+  file:
+    state: directory
+    path: "{{ nginx_auth_root }}"
+    owner: "{{ nginx_user }}"
+    group: wcadmin
+    mode: 0775
+  when: nginx_auth_enabled
+  tags:
+    - directory-structure
+    - nginx
+
 - name: Generate password
   no_log: True
   shell: "{{ item }}"
