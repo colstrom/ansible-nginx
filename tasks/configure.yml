@@ -44,7 +44,7 @@
     owner: "{{ nginx_user }}"
     group: wcadmin
     mode: 0775
-  when: "nginx_auth_password is defined"
+  when: nginx_auth_enabled | bool
   tags:
     - directory-structure
     - nginx
@@ -54,7 +54,7 @@
   with_items:
     - "echo -n \"{{ nginx_auth_username }}:\" > {{ nginx_auth_location }}"
     - "openssl passwd -1 -salt {{ nginx_auth_salt }} {{ nginx_auth_password | mandatory }} >> {{ nginx_auth_location }}"
-  when: "nginx_auth_password is defined"
+  when: nginx_auth_enabled | bool
   tags:
     - improves-security
     - nginx
