@@ -50,6 +50,7 @@
     - nginx
 
 - name: Generate password
+  no_log: True
   shell: "{{ item }}"
   with_items:
     - "echo -n \"{{ nginx_auth_username }}:\" > {{ nginx_auth_location }}"
