@@ -110,4 +110,4 @@ nginx_flag_social_crawlers: no
 nginx_prerender_enabled: no
 
 nginx_restricted_paths_for_security:
-  - .git
+  - /.git/
