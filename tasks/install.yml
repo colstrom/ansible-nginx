@@ -4,7 +4,7 @@
     state: latest
     pkg: "{{ item }}"
   with_items:
-    - nginx-naxsi
+    - "{{ nginx_distribution }}"
   tags:
     - nginx
     - software-installation
