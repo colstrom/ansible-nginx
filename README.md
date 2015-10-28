@@ -77,6 +77,7 @@ Tunables
 * `nginx_localhost_authorization_required` (boolean) - Require authorization if requests are from localhost?
 * `nginx_flag_social_crawlers` (boolean) - Flag social crawlers?
 * `nginx_prerender_enabled` (boolean) - Enable prerender.io support
+* `nginx_configuration_name` (string) - Path to write the standard configuration to
 
 Dependencies
 ------------

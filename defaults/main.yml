@@ -115,3 +115,5 @@ nginx_prerender_enabled: no
 nginx_restricted_paths_for_security:
   - /.git/
   - /uploads/
+
+nginx_configuration_name: site
