@@ -6,6 +6,7 @@
 
 Tunables
 --------
+* `nginx_port` (int) - The default unsecure port nginx will listen on
 * `nginx_user` (string) - User to run nginx as
 * `nginx_worker_processes` (integer) - number of worker processes
 * `nginx_worker_connections` (integer) - maximum connections per worker
@@ -32,6 +33,7 @@ Tunables
 * `nginx_passenger_enabled` (boolean) - Enable passenger for Ruby apps?
 * `nginx_php_enabled` (boolean) - Pass requests for PHP files to php-fpm?
 * `php_fpm_socket_path` (string) - Path to socket for php-fpm
+* `nginx_ssl_port` (int) - The default secure port nginx will listen on
 * `nginx_ssl_disabled` (boolean) - Redirect HTTPS to HTTP
 * `nginx_ssl_enforced` (boolean) - Redirect HTTP to HTTPS
 * `nginx_ssl_enabled` (boolean) - Enable HTTPS support
