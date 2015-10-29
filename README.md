@@ -80,7 +80,7 @@ Tunables
 * `nginx_flag_social_crawlers` (boolean) - Flag social crawlers?
 * `nginx_prerender_enabled` (boolean) - Enable prerender.io support
 * `nginx_configuration_name` (string) - Name of the configuration file to use the standard configuration template
-* `nginx_unsecure_listener_enabled` (boolean) - Enable the unsecure (http, non-ssl) listener
+* `nginx_insecure_listener_enabled` (boolean) - Enable the insecure (http, non-ssl) listener
 
 Dependencies
 ------------
