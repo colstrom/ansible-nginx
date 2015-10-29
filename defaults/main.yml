@@ -119,3 +119,5 @@ nginx_restricted_paths_for_security:
   - /uploads/
 
 nginx_configuration_name: site
+
+nginx_unsecure_listener_enabled: yes
