@@ -121,3 +121,6 @@ nginx_restricted_paths_for_security:
 nginx_configuration_name: site
 
 nginx_insecure_listener_enabled: yes
+
+fastcgi_script_names:
+  - /index.php
