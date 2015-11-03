@@ -122,5 +122,5 @@ nginx_configuration_name: site
 
 nginx_insecure_listener_enabled: yes
 
-fastcgi_script_names:
+nginx_fastcgi_script_names:
   - /index.php
