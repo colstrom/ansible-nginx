@@ -1,8 +1,8 @@
 # ansible-nginx
 
 [nginx](http://nginx.org/) is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP proxy server
-
 [![Platforms](http://img.shields.io/badge/platforms-ubuntu-lightgrey.svg?style=flat)](#)
+https://travis-ci.org/aaronpederson/ansible-nginx.svg?branch=master
 
 Tunables
 --------
