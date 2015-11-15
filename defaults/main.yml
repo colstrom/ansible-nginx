@@ -121,3 +121,5 @@ nginx_insecure_listener_enabled: yes
 
 nginx_fastcgi_script_names:
   - /index.php
+
+nginx_http2_enabled: no
