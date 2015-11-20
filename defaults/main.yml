@@ -2,6 +2,7 @@
 nginx_port: 80
 nginx_user: www-data
 nginx_group: www-data
+nginx_server_name: localhost
 nginx_worker_processes: "{{ ansible_processor_vcpus }}"
 nginx_worker_connections: 4096
 nginx_runtime_root: "{{ runtime_root | default('/var/run') }}/nginx"
@@ -124,3 +125,5 @@ nginx_insecure_listener_enabled: yes
 
 nginx_fastcgi_script_names:
   - /index.php
+
+nginx_http2_enabled: no

@@ -81,6 +81,7 @@ Tunables
 * `nginx_prerender_enabled` (boolean) - Enable prerender.io support
 * `nginx_configuration_name` (string) - Name of the configuration file to use the standard configuration template
 * `nginx_insecure_listener_enabled` (boolean) - Enable the insecure (http, non-ssl) listener
+* `nginx_http2_enabled` (boolean) - Enable http2 on the ssl connections
 
 Dependencies
 ------------
