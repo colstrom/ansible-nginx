@@ -83,7 +83,7 @@ Tunables
 * `nginx_insecure_listener_enabled` (boolean) - Enable the insecure (http, non-ssl) listener
 * `nginx_http2_enabled` (boolean) - Enable http2 on the ssl connections
 * `nginx_restricted_paths` (list) - List of paths to restrict access to.
-* `nginx_allow_access_to_restricted_paths_from_ips` (list) - List of ip addresses that require access to the above restricted paths.
+* `nginx_allow_access_to_restricted_paths_from_ips` (list) - List of ip addresses that require access to 'nginx_restricted_paths'.
 
 Dependencies
 ------------
