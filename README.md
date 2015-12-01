@@ -82,7 +82,7 @@ Tunables
 * `nginx_configuration_name` (string) - Name of the configuration file to use the standard configuration template
 * `nginx_insecure_listener_enabled` (boolean) - Enable the insecure (http, non-ssl) listener
 * `nginx_http2_enabled` (boolean) - Enable http2 on the ssl connections
-* `extended_configuration` (string) - complex project specific configuration (to be appended to the end of the the standard-configuration)
+* `nginx_extended_configuration` (string) - complex project specific configuration (to be appended to the end of the the standard-configuration)
 
 Dependencies
 ------------
