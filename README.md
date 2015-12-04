@@ -84,6 +84,8 @@ Tunables
 * `nginx_http2_enabled` (boolean) - Enable http2 on the ssl connections
 * `nginx_pre_extended_configuration` (string) - complex project specific configuration (to be included just after https handshake standardl-configuration)
 * `nginx_post_extended_configuration` (string) - complex project specific configuration (to be appended to the end of the the standard-configuration)
+* `nginx_restricted_paths` (list) - List of paths to restrict access to.
+* `nginx_allow_access_to_restricted_paths_from_ips` (list) - List of ip addresses that require access to 'nginx_restricted_paths'.
 
 Dependencies
 ------------
