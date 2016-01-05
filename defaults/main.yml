@@ -48,7 +48,7 @@ nginx_ssl_key_path: /data/www/ssl.key
 nginx_ssl_should_degrade_security_to_accomodate_old_browsers: no
 nginx_ssl_redirect_paths_http_to_https: no
 
-nginx_cors_enabled: yes
+nginx_cors_enabled: no
 nginx_cors_whitelist_enabled: no
 nginx_cors_whitelist_protocol: 'https?'
 nginx_cors_whitelist_hosts: '[^/]*\.telus(webteam)?\.com'
