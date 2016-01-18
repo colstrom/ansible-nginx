@@ -9,3 +9,4 @@
       logrotate_name: nginx
       logrotate_create_logs_with_owner: "{{ nginx_user }}"
     - role: ansible-nginx
+      nginx_auth_password: some-bs-password
