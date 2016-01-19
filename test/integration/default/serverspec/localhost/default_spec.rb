@@ -2,10 +2,6 @@ require 'spec_helper'
 
 describe 'ansible-nginx::default' do
 
-  describe package('nginx') do
-    it { should be_installed }
-  end
-
   describe port(80) do
     it { should be_listening }
   end
