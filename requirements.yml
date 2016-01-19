@@ -1,3 +1,4 @@
-telusdigital.apt-repository
-telusdigital.logrotate
-telusdigital.python
+--
+- src: telusdigital.apt-repository
+- src: telusdigital.logrotate
+- src: telusdigital.python
