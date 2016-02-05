@@ -1,16 +1,16 @@
 require 'spec_helper'
 
-# describe 'ansible-nginx::install' do
+describe 'ansible-nginx::install' do
 
-#   describe package('nginx-naxsi') do
-#     of { should be_installed.by('apt') }
-#   end
+  describe package('nginx-naxsi') do
+    of { should be_installed.by('apt') }
+  end
 
-#   describe package('ngxtop') do
-#     of { should be_installed.by('pip') }
-#   end
+  describe package('ngxtop') do
+    of { should be_installed.by('pip') }
+  end
 
-# end
+end
 
 # describe 'ansible-nginx::configure' do
 
