@@ -1,11 +1,12 @@
 # ansible-nginx
 
 [nginx](http://nginx.org/) is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP proxy server
-
 [![Platforms](http://img.shields.io/badge/platforms-ubuntu-lightgrey.svg?style=flat)](#)
+[![Build Status](https://travis-ci.org/telusdigital/ansible-php.svg?branch=master)](https://travis-ci.org/telusdigital/ansible-php)
 
 Tunables
 --------
+* `nginx_port` (integer) - The default unsecure port nginx will listen on
 * `nginx_user` (string) - User to run nginx as
 * `nginx_worker_processes` (integer) - number of worker processes
 * `nginx_worker_connections` (integer) - maximum connections per worker
@@ -27,10 +28,12 @@ Tunables
 * `nginx_performance_tuning_enabled` (boolean) - Aggressively favour performance over compatibility?
 * `nginx_file_descriptor_caching_enabled` (boolean) - Enable file descriptor caching?
 * `nginx_docroot` (string) - Directory for docroot
+* `nginx_creates_docroot` (boolean) - Enable to get nginx to create the docroot path
 * `nginx_standard_configuration` (boolean) - Using included configuration?
 * `nginx_passenger_enabled` (boolean) - Enable passenger for Ruby apps?
 * `nginx_php_enabled` (boolean) - Pass requests for PHP files to php-fpm?
 * `php_fpm_socket_path` (string) - Path to socket for php-fpm
+* `nginx_ssl_port` (integer) - The default secure port nginx will listen on
 * `nginx_ssl_disabled` (boolean) - Redirect HTTPS to HTTP
 * `nginx_ssl_enforced` (boolean) - Redirect HTTP to HTTPS
 * `nginx_ssl_enabled` (boolean) - Enable HTTPS support
@@ -76,6 +79,13 @@ Tunables
 * `nginx_localhost_authorization_required` (boolean) - Require authorization if requests are from localhost?
 * `nginx_flag_social_crawlers` (boolean) - Flag social crawlers?
 * `nginx_prerender_enabled` (boolean) - Enable prerender.io support
+* `nginx_configuration_name` (string) - Name of the configuration file to use the standard configuration template
+* `nginx_insecure_listener_enabled` (boolean) - Enable the insecure (http, non-ssl) listener
+* `nginx_http2_enabled` (boolean) - Enable http2 on the ssl connections
+* `nginx_pre_extended_configuration` (string) - complex project specific configuration (to be included just after https handshake standardl-configuration)
+* `nginx_post_extended_configuration` (string) - complex project specific configuration (to be appended to the end of the the standard-configuration)
+* `nginx_restricted_paths` (list) - List of paths to restrict access to.
+* `nginx_allow_access_to_restricted_paths_from_ips` (list) - List of ip addresses that require access to 'nginx_restricted_paths'.
 
 Dependencies
 ------------
