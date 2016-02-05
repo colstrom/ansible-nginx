@@ -51,15 +51,15 @@ require 'spec_helper'
 
 # end
 
-# describe 'ansible-nginx::logging' do
+describe 'ansible-nginx::logging' do
 
-#   describe file('/var/log/nginx') do
-#     it { should be_directory }
-#     it { should be_owned_by 'www-data' }
-#     it { should be_grouped_into 'www-data' }
-#   end
+  describe file('/var/log/nginx') do
+    it { should be_directory }
+    it { should be_owned_by 'www-data' }
+    it { should be_grouped_into 'www-data' }
+  end
 
-# end
+end
 
 describe 'ansible-nginx::default' do
 
