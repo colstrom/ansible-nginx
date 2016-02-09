@@ -20,6 +20,8 @@ describe 'ansible-nginx::configure' do
     it { should_not be_a_file }
   end
 
+
+
   describe file('/var/run/nginx') do
     it { should be_directory }
     it { should be_owned_by 'www-data' }
@@ -48,6 +50,7 @@ describe 'ansible-nginx::configure' do
   end
 
   describe file('/etc/nginx/sites-available/site.conf') do
+    its(:content) { should_not match /auth_basic/ }
     its(:content) { should match /server_name localhost;/ }
     its(:content) { should match /root \/data\/www\/docroot;/ }
     its(:content) { should match /index index.html;/ }
