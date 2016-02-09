@@ -14,6 +14,12 @@ end
 
 describe 'ansible-nginx::configure' do
 
+  # should not need bool() on vars
+  # testing that this doesn't get created by default
+  describe file('/data/www/auth') do
+    it { should_not be_a_file }
+  end
+
   describe file('/var/run/nginx') do
     it { should be_directory }
     it { should be_owned_by 'www-data' }
