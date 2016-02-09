@@ -48,6 +48,7 @@ Tunables
 * `nginx_client_max_body_size` (string) - Maximum size of the body of a request.
 * `nginx_file_extension_blacklist` (string) - Refuse to serve files matching this regular expression.
 * `nginx_auth_enabled` (boolean) - Enable HTTP Basic Auth?
+* `nginx_auth_password` (string) - Password for HTTP Basic Auth.
 * `nginx_auth_location` (string) - Path to auth file?
 * `nginx_auth_username` (string) - Username for auth?
 * `nginx_auth_salt` (string) - Salt for auth password?
