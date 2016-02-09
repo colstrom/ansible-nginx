@@ -48,6 +48,7 @@ describe 'ansible-nginx::configure' do
   end
 
   describe file('/etc/nginx/sites-available/site.conf') do
+    its(:content) { should_not match /auth_basic/ }
     its(:content) { should match /server_name localhost;/ }
     its(:content) { should match /root \/data\/www\/docroot;/ }
     its(:content) { should match /index index.html;/ }
