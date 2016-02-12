@@ -98,6 +98,20 @@ nginx_php_fastcgi_param_extras: []
 nginx_php_index_only: no
 
 nginx_static_asset_handling_enabled: yes
+nginx_static_asset_handling_extentions: 
+  - ico
+  - css
+  - js
+  - gif
+  - "jpe?g"
+  - png
+  - "svgz?"
+  - webp
+  - eot
+  - ttf
+  - woff
+  - otf
+  - pdf
 
 nginx_internal_paths_enabled: no
 nginx_internal_paths:
