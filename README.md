@@ -72,6 +72,7 @@ Tunables
 * `nginx_php_fastcgi_param_extras` (list) - Extra parameters to send to php-fpm
 * `nginx_php_index_only` (boolean) - Only accept requests for index.php
 * `nginx_static_asset_handling_enabled` (boolean) - Enable optimizations for static asset handling?
+* `nginx_static_asset_handling_extentions` (list) - Extentions to handle as static assets
 * `nginx_internal_paths_enabled` (boolean) - Treat some paths as internal?
 * `nginx_internal_paths` (boolean) - List of paths to treat as internal
 * `nginx_whitelist_ips` (list) - List of IPs to allow access to whitelisted paths.
