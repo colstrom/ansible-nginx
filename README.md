@@ -88,6 +88,9 @@ Tunables
 * `nginx_post_extended_configuration` (string) - complex project specific configuration (to be appended to the end of the the standard-configuration)
 * `nginx_restricted_paths` (list) - List of paths to restrict access to.
 * `nginx_allow_access_to_restricted_paths_from_ips` (list) - List of ip addresses that require access to 'nginx_restricted_paths'.
+* `nginx_restricted_paths_for_security` (list) - List of paths to be blocked for security reasons (ideally playbooks dont override this)
+* `nginx_whitelist_ips_for_security` (list) - Whitelisted CIDR list to bypass security
+* `nginx_harden_for_wordpress` (boolean) - Harden configuration for wordpress to make it more secure
 
 Dependencies
 ------------
