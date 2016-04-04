@@ -82,6 +82,7 @@ Tunables
 * `nginx_flag_social_crawlers` (boolean) - Flag social crawlers?
 * `nginx_prerender_enabled` (boolean) - Enable prerender.io support
 * `nginx_configuration_name` (string) - Name of the configuration file to use the standard configuration template
+* `nginx_configuration_type` (string) - Filename of the configuration file
 * `nginx_insecure_listener_enabled` (boolean) - Enable the insecure (http, non-ssl) listener
 * `nginx_http2_enabled` (boolean) - Enable http2 on the ssl connections
 * `nginx_pre_extended_configuration` (string) - complex project specific configuration (to be included just after https handshake standardl-configuration)

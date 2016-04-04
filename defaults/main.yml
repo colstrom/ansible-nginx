@@ -137,6 +137,7 @@ nginx_whitelist_ips_for_security: []
 nginx_harden_for_wordpress: yes
 
 nginx_configuration_name: site
+nginx_configuration_type: standard-configuration
 
 nginx_insecure_listener_enabled: yes
 
