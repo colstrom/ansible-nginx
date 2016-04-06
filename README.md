@@ -41,6 +41,7 @@ Tunables
 * `nginx_ssl_certificate_path` (string) - Path to SSL public key (certificate file)
 * `nginx_ssl_key_path` (string) - Path to SSL private key (key file)
 * `nginx_ssl_should_degrade_security_to_accomodate_old_browsers` (boolean) - Compromise security to support older browsers?
+* `nginx_ssl_protocol_detection` (boolean) - Write a cookie with the clients TLS version in it
 * `nginx_cors_enabled` (boolean) - Enable CORS support?
 * `nginx_cors_whitelist_enabled` (boolean) - Use whitelisting for CORS handling?
 * `nginx_cors_whitelist_protocol` (string) - Protocol to require for CORS?
