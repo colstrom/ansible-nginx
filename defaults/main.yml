@@ -146,3 +146,10 @@ nginx_fastcgi_script_names:
   - /index.php
 
 nginx_http2_enabled: no
+
+nginx_content_security_policy_report_only_enabled: no
+nginx_content_security_policy_report_only_list['default-src']:
+  - "'self'"
+nginx_content_security_policy_report_only['default-src']: "default-src {% for item in nginx_content_security_policy_report_only_list['default-src'] %}{{ item }} {% endfor %}"
+nginx_content_security_policy_report_only_report_uri: "/csp-report"
+nginx_content_security_policy_report_only_line: "{{ nginx_content_security_policy_report_only['default-src'] }}; report-uri {{ nginx_content_security_policy_report_only_report_uri }}"
