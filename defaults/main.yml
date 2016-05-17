@@ -69,6 +69,7 @@ nginx_auth_salt: apr1
 nginx_fastcgi_buffers: 8k
 
 nginx_context_proxy_enabled: no
+nginx_context_proxy_pass_location_try_files_override: no
 nginx_context_proxy_host: 'http://www.telus.com'
 nginx_context_proxy_domain_equivalence: "telus.com {{ domain }}"
 nginx_context_proxy_paths:
@@ -99,7 +100,7 @@ nginx_php_fastcgi_param_extras: []
 nginx_php_index_only: no
 
 nginx_static_asset_handling_enabled: yes
-nginx_static_asset_handling_extentions: 
+nginx_static_asset_handling_extentions:
   - ico
   - css
   - js
