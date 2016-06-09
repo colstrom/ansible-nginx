@@ -180,3 +180,5 @@ nginx_pagespeed_modules:
   - prioritize_critical_css
   - canonicalize_javascript_libraries
   - flatten_css_imports
+nginx_install_from_source: no
+nginx_install_from_source_version: 1.11.1
