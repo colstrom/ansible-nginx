@@ -14,7 +14,7 @@
 - name: Compile nginx
   shell: "cd /tmp/nginx-{{ nginx_install_from_source_version }} && sudo {{ item }}"
   with_items:
-    - ./configure
+    - ./configure {% for module in nginx_install_from_source_modules %}{{ module }} {% endfor %}
     - make
     - make install
     - "mv /tmp/nginx-{{ nginx_install_from_source_version }}/objs/nginx /bin/"

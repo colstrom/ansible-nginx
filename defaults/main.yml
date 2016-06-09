@@ -182,3 +182,6 @@ nginx_pagespeed_modules:
   - flatten_css_imports
 nginx_install_from_source: no
 nginx_install_from_source_version: 1.11.1
+nginx_install_from_source_modules:
+  - "--with-http_ssl_module"
+  - "--with-http_v2_module"
