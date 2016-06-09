@@ -180,8 +180,10 @@ nginx_pagespeed_modules:
   - prioritize_critical_css
   - canonicalize_javascript_libraries
   - flatten_css_imports
-nginx_install_from_source: no
+nginx_install_from_source: "{% if nginx_pagespeed_enabled %}yes{% else %}no{% endif %}"
 nginx_install_from_source_version: 1.11.1
+nginx_pagespeed_version: 1.11.33.2
 nginx_install_from_source_modules:
+  - "{% if nginx_pagespeed_enabled %}--add-module=/tmp/ngx_pagespeed-release-{{ nginx_pagespeed_version }}-beta{% endif %}"
   - "--with-http_ssl_module"
   - "--with-http_v2_module"
