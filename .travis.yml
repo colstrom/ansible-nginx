@@ -1,0 +1,15 @@
+---
+services: docker
+
+install:
+  - bundle install
+
+script:
+  - bundle exec kitchen test
+
+notifications:
+  slack:
+    on_success: change
+    on_failure: always
+    rooms:
+      - secure: WGgaKoZOtQSLYZ/S0wVkLdqn2ru4XQ2u0KIrLOF0KdDrRJlQK5sokuMu7oNIJyx1mbBTIXWdGtjKFkF5l85OYvPqTIMCnwAJxSvDg8FgiBp2KgRarOziMY2OnYw5W2Q/AI4nCfkaXlLc2SeCRrKrRdlcpyj0FIJDE1dZObPqr6beXQwQAIfjIKhg4LutiCNUxoicfSzPeEzz5WcUH+1fLJqTrSaKYAiBvUxGkXv0vnZfNdraJOnRwhBUv+fAH2SyiJrNnmf3HZtkyEifk6bWqU+JEbTXEs2p2/gTC4NA/IDwKV9mpPJJEAFWRiD4Dk92SRAtWMRoWFx2SLdgndiIJxVp6itWWQVvVA4IdHEh0atzYw6S/U8aUDIW3vDjXQsrLdldf93vjnOBjpuEEcI4mZ9Ibgos+v3VVrTQcYswuWOOrtXmCDQmoxC1WXP3vMHJtarb+QopJh4jPoJtcoOr25wfQenJLZ9wsqa98e25nkv6ZqEkfZ5oO6WxuH3yB3DloojAle3invYP/1VXxcuADO8Hjj0PDClPXzs2Zhd8k1H+HnCTG+25nKm2z1v1GZqKNIWpQimsQps07mu7GlOUWm8JZlckL8cHLxzvOpuD+Hx9PUzCjdN8EVENkZsWdPkK0kp00Wm4dRpoFmVOBmzPUQLTENMuVpm1PZghlorTH2c=
